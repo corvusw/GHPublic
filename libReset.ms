@@ -10,7 +10,7 @@
 
 metaxploit = include_lib("/lib/metaxploit.so")
 if not metaxploit then metaxploit = include_lib(parent_path(program_path) + "/metaxploit.so")
-if not metaxploit then print("<color=white>no metaxploit")
+if not metaxploit then exit("\n<color=white>no metaxploit")
 
 c = get_shell.host_computer
 count = 0
@@ -96,7 +96,7 @@ libReset = function(lib)
         memFile = slice(content, libIndex, content.indexOf(">",libIndex)).split(char(10))
         memFile.remove(0)
         memFile.remove(memFile.len - 1)
-        if i1.hasIndex("/") then num = 100000 else num = 10
+        if i1.indexOf("/") == 0 then num = 100000 else num = 100
         for x in range(num)
           for line in memFile
             line = line.split(":")
