@@ -1,3 +1,9 @@
+//terminal based scanlan
+//prints network chain
+//subnet pathways
+//device types
+//open/closed ports
+
 
 r = get_router
 deviceList = []

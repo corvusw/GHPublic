@@ -1,3 +1,13 @@
+//resets global libraries
+//useful for creating vulnerabilities for missions
+// or hunting secure libraries
+
+//launch with 'reset [port# or /file/path.so]'
+
+//use file path for local attacks and port for random remote attacks
+//must attack the most recent version of target library
+//must have the most recent version of metaxploit.so
+
 metaxploit = include_lib("/lib/metaxploit.so")
 if not metaxploit then metaxploit = include_lib(parent_path(program_path) + "/metaxploit.so")
 if not metaxploit then print("<color=white>no metaxploit")

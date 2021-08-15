@@ -1,3 +1,6 @@
+//file management list
+//advanced file management and navigation
+//see bottom for details
 
 if params.len > 0 then i1 = params[0] else i1 = null
 if params.len > 1 then i2 = params[1] else i2 = null
