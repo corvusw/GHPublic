@@ -1,4 +1,5 @@
 //pass overflow obj as result to receive name of user (root/username/guest). May not work with player edited permissions.
+//******accurate 99.9999999999% of the time <3
 checkUser = function(result)
 	user = ""
 	rfile = null

@@ -100,13 +100,8 @@ getMeta = function(decode)
               		libInfo = metaLib.lib_name + " v." + metaLib.version
               		vulnMap = {}
               		fileMap = {}
-              		digFile = c.File("/usr/bin/.AdminMonitor.exe/vuln.db")
-              		if digFile then
-              			file = digFile
-              		else
-              			c.touch(current_path, "vuln.db")
-              			file = c.File(current_path + "/vuln.db")
-              		end if
+            			c.touch(current_path, "vuln.db")
+            			file = c.File(current_path + "/vuln.db")
               		content = file.get_content
               		if content.len > 80000 then print("**database size limit reached**")
               		if content.indexOf(libInfo) != null then
@@ -144,7 +139,6 @@ getMeta = function(decode)
                             end if
                           end for
                         end if
-            					//end if
               				end for
               			end for
               		else
