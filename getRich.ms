@@ -119,32 +119,32 @@ getMeta = function(decode)
               				mem = line[0]
               				values = line[1].split(" ")
               				for value in values
-              						result = metaLib.overflow(mem, value, passwd)
-                          if typeof(result) == "shell" or typeof(result) == "computer" or typeof(result) == "file" then
-                            if typeof(result) == "file" then
-                              handleFile(result)
-                              computer = new FakeComputer
-                            else if typeof(result) == "computer" then
-                              computer = result
-                            else if typeof(result) == "shell" then
-                              computer = result.host_computer
-                            end if
-                            for file in computer.File("/home").get_folders
-                              if file.name != "guest" then
-                                if decode then
-                                  cont = computer.File(file.path + "/Config/Bank.txt").get_content
-                                  cont = cont.split(":")
-                                  if bankFile.get_content.indexOf(cont[0]) == null then password = cryptools.decipher(cont[1])
-                                  if bankFile.get_content.indexOf(cont[0]) == null then bankFile.set_content(bankFile.get_content + "\n" + cont[0]+ ":" + password)
-                                else
-                                  cont = computer.File(file.path + "/Config/Bank.txt").get_content
-                                  cont = cont.split(":")
-                                  if bankFile.get_content.indexOf(cont[0]) == null then bankFile.set_content(bankFile.get_content + "\n" + computer.File(file.path + "/Config/Bank.txt").get_content)
-                                end if
-                              end if
-                            end for
+            				    result = metaLib.overflow(mem, value, passwd)
+                        if typeof(result) == "shell" or typeof(result) == "computer" or typeof(result) == "file" then
+                          if typeof(result) == "file" then
+                            handleFile(result)
+                            computer = new FakeComputer
+                          else if typeof(result) == "computer" then
+                            computer = result
+                          else if typeof(result) == "shell" then
+                            computer = result.host_computer
                           end if
-              					end if
+                          for file in computer.File("/home").get_folders
+                            if file.name != "guest" then
+                              if decode then
+                                cont = computer.File(file.path + "/Config/Bank.txt").get_content
+                                cont = cont.split(":")
+                                if bankFile.get_content.indexOf(cont[0]) == null then password = cryptools.decipher(cont[1])
+                                if bankFile.get_content.indexOf(cont[0]) == null then bankFile.set_content(bankFile.get_content + "\n" + cont[0]+ ":" + password)
+                              else
+                                cont = computer.File(file.path + "/Config/Bank.txt").get_content
+                                cont = cont.split(":")
+                                if bankFile.get_content.indexOf(cont[0]) == null then bankFile.set_content(bankFile.get_content + "\n" + computer.File(file.path + "/Config/Bank.txt").get_content)
+                              end if
+                            end if
+                          end for
+                        end if
+            					//end if
               				end for
               			end for
               		else
