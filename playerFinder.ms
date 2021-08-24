@@ -1,4 +1,7 @@
-//continuously scans random ip's. if a player proxy or rshell server is found, the ip is added to players.db in the launch directory.
+//continuously scans random ip's searching for proxies and rshells
+//discovered servers will be saved to players.db in current directory
+//this is like panning for gold. it's a slow process.
+
 findProxy = function()
 	clear_screen
 	c = get_shell.host_computer
