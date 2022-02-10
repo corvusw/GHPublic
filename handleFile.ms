@@ -1,7 +1,7 @@
 
 //handleFile: use 'computer.File([path] or "/file/path")' with file objects
 //use handleFile(file) to set FakeComputer
-//instantiate with computer = new FakeComputer
+//initialize with computer = new FakeComputer
 //then use computer.File("file/path")
 //use getFolders(file) to get a list of all folders/sub of the passed file object
 
@@ -36,7 +36,7 @@ end function
 
 //set up fake computer object
 FakeComputer = {}
-//instantiate fake computer result paramater (result = exploited file obj)
+//initialize fake computer result paramater (result = exploited file obj)
 FakeComputer.result = null
 
 //creates and assigns fake computer object
