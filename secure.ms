@@ -1,4 +1,6 @@
 //secure system
+// ONLY RUN 'home' on your home PC. all others could lock you out permenantly!
+
 if params.len > 0 then i1 = params[0] else exit("usage: sec [home/h] or [server/s] or [remote/r]")
   if i1 == "home" or i1 == "h" then home = true else home = null
 if params.len > 1 then i2 = params[1] else i2 = null
